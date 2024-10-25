@@ -1,0 +1,119 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.screen {
+    display: flex;
+    height : 70px;
+    background-color: black;
+    color: white;
+    justify-content: end;
+    align-items: center;
+    padding: 5px;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 2.5rem;
+}
+
+.calculator-container{
+    width: 25%;
+    padding-right: 5px;
+    height : 510px;
+    background-color: black;
+}
+
+.calc-buttons{
+    display: grid;
+    grid-template-areas: 
+        'c c backspace division'
+        'seven eight nine multiplication'
+        'four five six subtract1'
+        'one two three addition'
+        'zero1 zero1 zero1 equal-to';
+    gap: 7px;
+    margin-top: 5px;
+    
+}
+
+.calc-button {
+    height: 80px;
+    font-size: 30px;
+    border-radius: 200px;
+    border: none;
+    background-color: rgb(28, 28, 28);
+    color: white;
+}
+
+.calc-button:hover{
+    background-color: rgb(70, 70, 70);
+}
+
+.calc-button.func {
+    background-color: rgb(70, 70, 70);
+}
+
+.calc-button.func:hover{
+    background-color: rgb(100, 100, 100);
+}
+
+.calc-button.func.orange {
+    background-color: #FF9500;
+}
+
+.calc-button.func.orange:hover{
+    background-color: #ffae3c;
+}
+
+.calc-button:nth-child(1) {
+    grid-area: c;
+}
+
+.calc-button:nth-child(2) {
+    grid-area: backspace;
+}
+.calc-button:nth-child(3) {
+    grid-area: division;
+}
+.calc-button:nth-child(4) {
+    grid-area: seven;
+}
+.calc-button:nth-child(5) {
+    grid-area: eight;
+}
+.calc-button:nth-child(6) {
+    grid-area: nine;
+}
+.calc-button:nth-child(7) {
+    grid-area: multiplication;
+}
+.calc-button:nth-child(8) {
+    grid-area: four;
+}
+.calc-button:nth-child(9) {
+    grid-area: five;
+}
+.calc-button:nth-child(10) {
+    grid-area: six;
+}
+.calc-button:nth-child(11) {
+    grid-area: subtract1;
+}
+.calc-button:nth-child(12) {
+    grid-area: one;
+}
+.calc-button:nth-child(13) {
+    grid-area: two;
+}
+.calc-button:nth-child(14) {
+    grid-area: three;
+}
+.calc-button:nth-child(15) {
+    grid-area: addition;
+}
+.calc-button:nth-child(16) {
+    grid-area: zero1;
+}
+.calc-button:nth-child(17) {
+    grid-area: equal-to;
+}
