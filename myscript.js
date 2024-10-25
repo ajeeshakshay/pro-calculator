@@ -3,21 +3,26 @@ const screen = document.querySelector(".screen");
 let runningTotal = 0;
 let previousOperator=null;
 
-function buttonClick(value){
-    if(isNaN(parseInt(value))){
-        handleSymbols(value)
+function buttonClick(value)//divides the buttons into 2 parts-> numbers and symbols 
+{
+    if(isNaN(parseInt(value)))//if a button is not a number parseInt returns Nan
+    {
+        handleSymbols(value);
     }
-    else{
-        handleNumbers(value)
+    else
+    {
+        handleNumbers(value);
     }
     rerender();//this function displays the value in buffer
 }
 
 function handleNumbers(number){
-    if (buffer ==='0'){
+    if (buffer ==='0')//Start of entering a number or when screen shows 0, we replace 0 with the entry
+    {
         buffer=number;
     }
-    else{
+    else//else we append
+    {
         buffer+=number;
     }
 }
@@ -28,20 +33,21 @@ function handleSymbols(symbol){
             buffer='0';
             break;//acts as the closing curly braces in if statement
         case '=' :
-            if(previousOperator===null){
-
+            if(previousOperator===null)//case where we have no operations before pressing =
+            {
                 return;
             }
             flushOperation(parseInt(buffer));
-            buffer = "" + runningTotal;
-            previousOperator = null;
-
+            buffer = "" + runningTotal;//converting to string before assignment
+            previousOperator = null;//start from square 1 after = sign
             break;
         case '←' : 
-            if(buffer.length===1){
+            if(buffer.length===1)//this acts same when the screen has 1 number or '0'
+            {
                 buffer='0';
             }
-            else{
+            else//else removing the last digit
+            {
                 buffer=buffer.substring(0,buffer.length-1);
             }
             break;
@@ -54,21 +60,22 @@ function handleSymbols(symbol){
     }
 }
 
-function handleMath(value){
-    if(buffer==='0'){
+function handleMath(value)//only if it is +, -, / or *
+{
+    if(buffer==='0')//this will return the number that is already there on screen if it is 0
+    {
         return;
     }
 
-    const intBuffer=parseInt(buffer);
+    const intBuffer=parseInt(buffer);//buffer is currently having only the digits and not the operator
     if (runningTotal===0){
         runningTotal=intBuffer;
     }
     else{
         flushOperation(intBuffer);
     }
-    previousOperator=value;
+    previousOperator=value;//even if this is the initial operator, it is added here to the previousOperator
     buffer='0';
-    console.log(runningTotal);
     
 }
 
@@ -91,11 +98,12 @@ function rerender(){
     screen.innerText = buffer;
 }
 
-function init() {
+function init()//Any button click in  the container is analysed
+{
     document
       .querySelector(".calc-buttons")
       .addEventListener("click", function (event) {
-        buttonClick(event.target.innerText);
+        buttonClick(event.target.innerText);//inner text gives the information of what the button actually is
       });
 }
 

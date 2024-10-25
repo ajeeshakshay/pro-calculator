@@ -4,10 +4,17 @@
     margin: 0;
 }
 
+.calculator{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 590px;
+}
+
 .screen {
     display: flex;
     height : 70px;
-    background-color: black;
+    /* background-color: black; */
     color: white;
     justify-content: end;
     align-items: center;
@@ -19,9 +26,10 @@
 .calculator-container{
     min-width: 320px;
     max-width: 25%;
-    padding-right: 5px;
+    padding: 5px;
     height : 510px;
     background-color: black;
+    border-radius: 15px;
 }
 
 .calc-buttons{
