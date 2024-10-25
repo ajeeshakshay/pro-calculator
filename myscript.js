@@ -31,6 +31,7 @@ function handleSymbols(symbol){
     switch(symbol){
         case 'C' : 
             buffer='0';
+            runningTotal=0;
             break;//acts as the closing curly braces in if statement
         case '=' :
             if(previousOperator===null)//case where we have no operations before pressing =
