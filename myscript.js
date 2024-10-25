@@ -42,7 +42,7 @@ function handleSymbols(symbol){
             buffer = "" + runningTotal;//converting to string before assignment
             previousOperator = null;//start from square 1 after = sign
             break;
-        case '←' : 
+        case '⌫' : 
             if(buffer.length===1)//this acts same when the screen has 1 number or '0'
             {
                 buffer='0';
