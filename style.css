@@ -17,7 +17,8 @@
 }
 
 .calculator-container{
-    width: 25%;
+    min-width: 320px;
+    max-width: 25%;
     padding-right: 5px;
     height : 510px;
     background-color: black;
